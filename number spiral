@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+void solved(ll r,ll c){
+    if(r==c){
+        cout<<r*r-(r-1)<<endl;
+    }
+    else{
+        ll val=max(r,c);
+        val=val*val-(val-1);
+        if(c>r){
+            if(c%2==0){
+                val-=(c-r);
+            }
+            else{
+                val+=(c-r);
+            }
+        }
+        else if(r>c){
+            if(r%2==0){
+                val+=(r-c);
+            }
+            else{
+                val-=(r-c);
+            }
+        }
+        cout<<val<<endl;
+    }
+}
+int main(){
+    ll t;
+    cin>>t;
+    int r=INT_MAX,c=INT_MAX;
+    while(t--){
+        int r,c;
+        cin>>r>>c;
+        solved(r,c);
+    }
+return 0;
+}
