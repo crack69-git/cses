@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main(){
+    ll n;
+    cin >> n;
+    set<ll> distinct_numbers;
+    for(ll i = 0; i < n; i++){
+        ll x;
+        cin >> x;
+        distinct_numbers.insert(x);
+    }
+    cout << distinct_numbers.size() << endl;
+    return 0;
+}
