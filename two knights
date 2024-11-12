@@ -1,23 +1,18 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
+#define ll long long
 int main() {
     int n;
     cin >> n;
-
-    for (int k = 1; k <= n; ++k) {
+    for (ll i = 1;i<= n;i++) {
         // Total ways to place two knights on a k x k board
-        long long total_positions = (long long)k * k * (k * k - 1) / 2;
-
+        ll total_positions = (ll)i*i*(i*i-1)/2;
         // Number of positions where knights attack each other
-        long long attacking_positions = 4 * (k - 1) * (k - 2);
-
+        ll attacking_positions = 4*(i - 1)*(i- 2);
         // Non-attacking positions
-        long long result = total_positions - attacking_positions;
-
+        ll result = total_positions-attacking_positions;
         cout << result << endl;
     }
-
     return 0;
 }
 
