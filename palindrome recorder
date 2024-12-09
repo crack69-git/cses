@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    string s;
+    cin >> s;
+    unordered_map<char, int> freq;
+    for (char c : s) {
+        freq[c]++;
+    }
+    int odd_count = 0;
+    char odd_char = '\0';
+    for (auto p : freq) {
+        if (p.second % 2 != 0) {
+            odd_count++;
+            odd_char = p.first;
+        }
+    }
+    if (odd_count > 1) {
+        cout << "NO SOLUTION" << endl;
+        return 0;
+    }
+    string first_half = "", second_half = "";
+    for (auto p : freq) {
+        string temp(p.second / 2, p.first);
+        first_half += temp;
+    }
+    second_half = first_half;
+    reverse(second_half.begin(), second_half.end());
+    if (odd_count == 1) {
+        first_half += odd_char;
+    }
+    cout << first_half + second_half << endl;
+    return 0;
+}
+
