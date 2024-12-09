@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    long long n;
+    cin >> n;
+    long long zero = 0;
+    for (long long i = 5; n / i > 0; i *= 5) {
+        zero += n / i;
+    }
+    cout << zero;
+    return 0;
+}
